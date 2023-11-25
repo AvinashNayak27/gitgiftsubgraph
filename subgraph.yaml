@@ -1,0 +1,27 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: GitGift
+    network: base-testnet
+    source:
+      address: "0x9fE69604504f6089c64cB774D015890541F808de"
+      abi: GitGift
+      startBlock: 12848765
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Claimed
+        - DonatedETH
+      abis:
+        - name: GitGift
+          file: ./abis/GitGift.json
+      eventHandlers:
+        - event: Claimed(uint256,uint256)
+          handler: handleClaimed
+        - event: DonatedETH(uint256,uint256)
+          handler: handleDonatedETH
+      file: ./src/git-gift.ts

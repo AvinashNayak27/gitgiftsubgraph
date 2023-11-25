@@ -1,0 +1,8 @@
+{
+  "base-testnet": {
+    "GitGift": {
+      "address": "0x9fE69604504f6089c64cB774D015890541F808de",
+      "startBlock": 12848765
+    }
+  }
+}

@@ -1,0 +1,17 @@
+type Claimed @entity(immutable: true) {
+  id: Bytes!
+  githubUserId: BigInt! # uint256
+  ethAmount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DonatedETH @entity(immutable: true) {
+  id: Bytes!
+  githubUserId: BigInt! # uint256
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
